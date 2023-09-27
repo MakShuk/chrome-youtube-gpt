@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body  id="extention-body">
+    <div id="extention-page-state">Waiting for page to load</div>
+            <!--   first key entry -->
+    <div id="extention-add-key" style="display: none;">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="first-api-key">API Key</span>
+        <input type="text" id="first-add-key" value="" class="form-control text-white" style="background-color: rgb(68, 70, 84);"
+          placeholder="Enter Key" aria-label="API Key">
+      </div>
+      <button type="button" id="save-key" class="btn button" disabled>Save</button>
+    </div>
+            <!-- Error messages -->
+    <div id="extention-page-error" style="display: none;" >The extension only works on Youtube.com</div>
+    <div id="extention-page-info" style="display: none;">Waiting for subtitles to load</div>
+            <!--   main block -->
+    <div class="start_message" style="display: none;">
+      <button id="extention-button">Get subtitles</button>
+        <a as="button"
+          class=" items-center gap-3 text-white"
+          id="extention-settings-button"  tabindex="-1" data-headlessui-state=""><svg stroke="currentColor"
+            fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"
+            height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+            </path>
+          </svg></a>
+    </div>
+            <!-- settings block -->
+    <div id="extention-settings" style="display: none;">
+      <div class="header-settings">
+        <div>
+          <h3 as="h3" id="setting-title">Settings</h2>
+        </div>
+        <button id="extention-settings-close"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+            stroke-linejoin="round" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg></button>
+      </div>
+      <div class="settings-block">
+         <h4 id="context-title">Context</h4>
+        <textarea id="context-textarea"class="extention-textarea form-control text-white" aria-label="With textarea"></textarea>
+      </div>
+        <div class="settings-select-block">
+          <select id="extensionLanguage" class="form-select form-control text-white" style="background-color: rgb(68, 70, 84);" aria-label="Default select example">
+          </select>
+          <select id="responseLanguage"class="form-select form-control text-white" style="background-color: rgb(68, 70, 84);" aria-label="Default select example">
+          </select>
+        </div>
+          <div class="settings-key-block">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic">API Key</span>
+              <input id="setApiSettings" type="text" value="sk-...NLFF" class="form-control text-white" style="background-color: rgb(68, 70, 84);" placeholder="Enter Key" aria-label="API Key" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <button id="save-settings" type="button" class="btn button" disabled>Save settings</button>
+</div>
+    
+  
+    <script src="./popup.js"></script>
+  </body>
+</html>
