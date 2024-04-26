@@ -37,4 +37,3 @@ lerna-debug.log*
 @settings
 .env
 constants.ts
-*.json
