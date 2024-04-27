@@ -1,6 +1,6 @@
-import { ExtentionSelector } from './enum/selector.enum';
+import { ExtensionSelector } from './enum/selector.enum';
 import { getSubYouTube } from './script/getSubYouTube/getSubYouTube';
-import { BackgroundSript } from './script/runBackgroundScript/runBackgroundScript';
+import { BackgroundScript } from './script/runBackgroundScript/runBackgroundScript';
 import { PageElementService } from './services/page-element/page-elemen.service';
 import { settingsInit } from './components/settingsPage/settingsPage';
 import { firstInitialization } from './components/firstInitialization/firstInitialization';
@@ -21,43 +21,43 @@ async function init() {
 	applyTranslations(translations, language);
 
 	//* Ждем загрузки страницы
-	const redyStateMessage = new PageElementService(ExtentionSelector.pageState);
+	const readyStateMessage = new PageElementService(ExtensionSelector.pageState);
 
-	let isPageReadyState = await BackgroundSript.run(() => {
+	let isPageReadyState = await BackgroundScript.run(() => {
 		return document.readyState === 'complete';
 	});
 
 	while (!isPageReadyState) {
-		isPageReadyState = await BackgroundSript.run(() => {
+		isPageReadyState = await BackgroundScript.run(() => {
 			console.log('Ожидание загрузки станицы');
 			return document.readyState === 'complete';
 		});
 	}
 
 	//* Скрываем сообщение о загрузке
-	redyStateMessage.hide(true);
+	readyStateMessage.hide(true);
 
-	//* Проверяем что находимся на нуджной странице
+	//* Проверяем что находимся на нужной странице
 	if (!(await isYouTubePage())) {
-		const errorPageMessage = new PageElementService(ExtentionSelector.pageError);
+		const errorPageMessage = new PageElementService(ExtensionSelector.pageError);
 		errorPageMessage.hide(false);
 		return null;
 	}
 
-	//* Ототбражаем сообщении об ожидании субтитров
-	const infoMess = new PageElementService(ExtentionSelector.info);
+	//* Отображаем сообщении об ожидании субтитров
+	const infoMess = new PageElementService(ExtensionSelector.info);
 	infoMess.hide(false);
 
-	//* Раскрывем субтитры на странице
-	await BackgroundSript.run(getSubYouTube);
+	//* Раскрываем субтитры на странице
+	await BackgroundScript.run(getSubYouTube);
 
 	//* Скрываем сообщении об ожидании субтитров
 	infoMess.hide(true);
 
 	//* Отображаем кнопку
-	const buttion = new PageElementService(ExtentionSelector.button);
-	buttion.addEvent(buttonAction);
-	const startMessageEl = new PageElementService(ExtentionSelector.startMessage);
+	const button = new PageElementService(ExtensionSelector.button);
+	button.addEvent(buttonAction);
+	const startMessageEl = new PageElementService(ExtensionSelector.startMessage);
 	(await firstInitialization(settingsStorage)) ? startMessageEl.hide(false) : null;
 	return null;
 }

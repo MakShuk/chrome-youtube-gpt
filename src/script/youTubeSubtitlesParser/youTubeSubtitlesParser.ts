@@ -11,7 +11,7 @@ export function youTubeSubtitlesParser(): IYouTubeSubtitlesParserResult {
 
 		if (nodes.length === 0) {
 			throw new Error(
-				`nodes.length === 0, проверьте раздел субдитров, проверте селектор ${nodeSelector}`,
+				`nodes.length === 0, проверьте раздел субтитров, селектор ${nodeSelector}`,
 			);
 		}
 		let text: string = '';
@@ -30,7 +30,7 @@ export function youTubeSubtitlesParser(): IYouTubeSubtitlesParserResult {
 	} catch (error) {
 		return {
 			error: true,
-			content: `Ошибка парсинга субтитров ${error}`,
+			content: `Ошибка пирсинга субтитров ${error}`,
 		};
 	}
 }

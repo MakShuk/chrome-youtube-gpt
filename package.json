@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "npx webpack"
   },
-  "author": "Shuklin Maksim",
+  "author": "Shuklin Maxim",
   "license": "ISC",
   "devDependencies": {
     "typescript": "^5.4.5",

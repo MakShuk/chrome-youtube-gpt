@@ -1,5 +1,5 @@
 import { ExtensionLanguage, ResponseLanguage } from '../../enum/languages.enum';
-import { ExtentionSelector } from '../../enum/selector.enum';
+import { ExtensionSelector } from '../../enum/selector.enum';
 import { ISettings } from '../../interfaces/settings.interface';
 import { EventType, PageElementService } from '../../services/page-element/page-elemen.service';
 import { LocalStorageService } from '../../services/storage/localStorage.service';
@@ -9,10 +9,10 @@ export async function firstInitialization(settingsStorage: LocalStorageService) 
 
 	if (settingsStatus.error) {
 		const keyLength = 51;
-		const addKeyArea = new PageElementService(ExtentionSelector.addKeyArea);
-		const saveButton = new PageElementService(ExtentionSelector.saveKey);
-		const firstKeyInput = new PageElementService(ExtentionSelector.firstAddKey);
-		const startMessageEl = new PageElementService(ExtentionSelector.startMessage);
+		const addKeyArea = new PageElementService(ExtensionSelector.addKeyArea);
+		const saveButton = new PageElementService(ExtensionSelector.saveKey);
+		const firstKeyInput = new PageElementService(ExtensionSelector.firstAddKey);
+		const startMessageEl = new PageElementService(ExtensionSelector.startMessage);
 
 		startMessageEl.hide(true);
 		addKeyArea.hide(false);

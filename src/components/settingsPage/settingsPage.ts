@@ -1,6 +1,6 @@
 import { ISettings } from '../../interfaces/settings.interface';
 import { ExtensionLanguage, ResponseLanguage } from '../../enum/languages.enum';
-import { ExtentionSelector } from '../../enum/selector.enum';
+import { ExtensionSelector } from '../../enum/selector.enum';
 import { EventType, PageElementService } from '../../services/page-element/page-elemen.service';
 import { LocalStorageService } from '../../services/storage/localStorage.service';
 import { translations } from '../../languages/languages';
@@ -11,17 +11,17 @@ type Languages = typeof ResponseLanguage | typeof ExtensionLanguage;
 export async function settingsInit() {
 	const settingsStorage = new LocalStorageService('settings');
 
-	const startMessageEl = new PageElementService(ExtentionSelector.startMessage);
-	const settingsButton = new PageElementService(ExtentionSelector.settingsButtion);
-	const settingsArea = new PageElementService(ExtentionSelector.settingsArea);
-	const settingsClose = new PageElementService(ExtentionSelector.settingsClose);
+	const startMessageEl = new PageElementService(ExtensionSelector.startMessage);
+	const settingsButton = new PageElementService(ExtensionSelector.settingsButtion);
+	const settingsArea = new PageElementService(ExtensionSelector.settingsArea);
+	const settingsClose = new PageElementService(ExtensionSelector.settingsClose);
 
-	const settingsContext = new PageElementService(ExtentionSelector.context);
-	const extensionLanguage = new PageElementService(ExtentionSelector.extensionLanguage);
-	const responseLanguage = new PageElementService(ExtentionSelector.responseLanguage);
-	const setApiSettings = new PageElementService(ExtentionSelector.setApiSettings);
+	const settingsContext = new PageElementService(ExtensionSelector.context);
+	const extensionLanguage = new PageElementService(ExtensionSelector.extensionLanguage);
+	const responseLanguage = new PageElementService(ExtensionSelector.responseLanguage);
+	const setApiSettings = new PageElementService(ExtensionSelector.setApiSettings);
 
-	const saveSettings = new PageElementService(ExtentionSelector.saveSettings);
+	const saveSettings = new PageElementService(ExtensionSelector.saveSettings);
 
 	settingsButton.addEvent(async () => {
 		const settingsStatus = await settingsStorage.load();

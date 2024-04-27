@@ -1,4 +1,4 @@
-export enum ExtentionSelector {
+export enum ExtensionSelector {
 	pageError = '#extention-page-error',
 	button = '#extention-button',
 	pageState = '#extention-page-state',

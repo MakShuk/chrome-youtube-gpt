@@ -4,7 +4,7 @@ export async function isFullLoadingElement(selector: string) {
 	try {
 		const loadingElement = document.querySelector(selector);
 		if (!loadingElement) {
-			throw new Error(`Элемент не найден, проверте селектор ${selector}`);
+			throw new Error(`Элемент не найден, селектор ${selector}`);
 		}
 
 		const finalObj = {

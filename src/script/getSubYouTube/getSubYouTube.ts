@@ -5,16 +5,16 @@ interface IGetSubYouTubeResult {
 
 export async function getSubYouTube(): Promise<IGetSubYouTubeResult> {
 	try {
-		const nodesSeletctor = '#segments-container > ytd-transcript-segment-renderer';
-		let nodes = document.querySelectorAll(nodesSeletctor);
+		const nodesSelector = '#segments-container > ytd-transcript-segment-renderer';
+		let nodes = document.querySelectorAll(nodesSelector);
 		if (nodes.length > 0) {
-			return { error: false, content: 'Элемент присуствует' };
+			return { error: false, content: 'Элемент присутствует' };
 		}
 
 		const description = '#description-inner';
 		const menuBtn = document.querySelector(description) as HTMLBaseElement;
 		if (!menuBtn) {
-			throw new Error(`Элемент не найден, проверте селектор ${description}`);
+			throw new Error(`Элемент не найден, селектор ${description}`);
 		}
 		menuBtn?.click();
 
@@ -30,14 +30,14 @@ export async function getSubYouTube(): Promise<IGetSubYouTubeResult> {
 
 		while (nodes.length <= 0) {
 			await new Promise(resolve => setTimeout(resolve, 100));
-			nodes = document.querySelectorAll(nodesSeletctor);
+			nodes = document.querySelectorAll(nodesSelector);
 		}
 
-		return { error: false, content: 'Субитры отоборажены на странице' };
+		return { error: false, content: 'Субтитры отображены на странице' };
 	} catch (error) {
 		return {
 			error: true,
-			content: `Субитры отоборажения субтитров на странице: ${error}`,
+			content: `Субтитры отображения субтитров на странице: ${error}`,
 		};
 	}
 }

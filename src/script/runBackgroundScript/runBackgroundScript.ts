@@ -1,4 +1,4 @@
-export class BackgroundSript {
+export class BackgroundScript {
 	static async run(func: any, arr?: any): Promise<any> {
 		const [tab] = await chrome.tabs.query({
 			active: true,

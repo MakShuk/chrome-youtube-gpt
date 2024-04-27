@@ -1,10 +1,10 @@
 import { LocalStorageService } from '../../services/storage/localStorage.service';
-import { ExtentionSelector } from '../../enum/selector.enum';
+import { ExtensionSelector } from '../../enum/selector.enum';
 import { OpenaiService } from '../../services/openai/openai.service';
 import { Stream } from 'openai/streaming';
 
 export function addEventPaginationElement() {
-	const childPaginationElements = document.querySelectorAll(ExtentionSelector.paginationEl);
+	const childPaginationElements = document.querySelectorAll(ExtensionSelector.paginationEl);
 
 	function disableAllElements() {
 		childPaginationElements.forEach(element => {
@@ -14,7 +14,7 @@ export function addEventPaginationElement() {
 	}
 	function showContentElement(key: string) {
 		const elements = document.querySelectorAll(
-			ExtentionSelector.contentEl,
+			ExtensionSelector.contentEl,
 		) as NodeListOf<HTMLDivElement>;
 		elements.forEach(el => {
 			el.style.display = 'none';
@@ -35,11 +35,11 @@ export function addEventPaginationElement() {
 }
 
 export function addEventContentElement() {
-	const chialdContentElement = document.querySelectorAll(ExtentionSelector.paginationTopСhild);
+	const  childContentElement = document.querySelectorAll(ExtensionSelector.paginationTopСhild);
 
 	function disabledAllEl(n: string) {
-		const chialdContentElement = document.querySelectorAll(`.group-${n}`);
-		chialdContentElement.forEach(element => {
+		const childContentElements = document.querySelectorAll(`.group-${n}`);
+		childContentElements.forEach(element => {
 			element.classList.remove('enabled');
 			element.classList.add('disabled');
 		});
@@ -59,9 +59,9 @@ export function addEventContentElement() {
 		showElement.style.display = '';
 	}
 
-	chialdContentElement.forEach(element => {
+	childContentElement.forEach(element => {
 		element.addEventListener('click', () => {
-			const responce = element.getAttribute('response') || 'false';
+			const response = element.getAttribute('response') || 'false';
 
 			const group = element.getAttribute('group') || 'group-1';
 			disabledAllEl(group);
@@ -69,9 +69,9 @@ export function addEventContentElement() {
 			element.classList.remove('disabled');
 			element.classList.add('enabled');
 			toggleTextArea(group, textarea);
-			console.log(responce);
+			console.log(response);
 			console.log(textarea === 'answer');
-			if (textarea === 'answer' && responce !== 'received') {
+			if (textarea === 'answer' && response !== 'received') {
 				console.log('Делаем запрос');
 				addEventAnswerElement(group);
 				element.setAttribute('response', 'received');
