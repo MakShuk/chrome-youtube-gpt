@@ -12,7 +12,7 @@ export async function settingsInit() {
 	const settingsStorage = new LocalStorageService('settings');
 
 	const startMessageEl = new PageElementService(ExtensionSelector.startMessage);
-	const settingsButton = new PageElementService(ExtensionSelector.settingsButtion);
+	const settingsButton = new PageElementService(ExtensionSelector.settingsButton);
 	const settingsArea = new PageElementService(ExtensionSelector.settingsArea);
 	const settingsClose = new PageElementService(ExtensionSelector.settingsClose);
 

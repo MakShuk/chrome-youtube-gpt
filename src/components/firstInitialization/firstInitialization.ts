@@ -22,17 +22,14 @@ export async function firstInitialization(settingsStorage: LocalStorageService) 
 			if (inputValue.length < keyLength) {
 				saveButton.node.element ? (saveButton.node.element.disabled = true) : null;
 			}
-			if (inputValue.length === keyLength) {
+			if (inputValue.length >= keyLength) {
 				saveButton.node.element ? (saveButton.node.element.disabled = false) : null;
-			}
-			if (inputValue.length > keyLength) {
-				saveButton.node.element ? (saveButton.node.element.disabled = true) : null;
 			}
 		}, EventType.Input);
 
 		saveButton.addEvent(() => {
 			var inputValue = firstKeyInput.node.element?.value || '';
-			if (inputValue.length === keyLength) {
+			if (inputValue.length >= keyLength) {
 				const initData: ISettings = {
 					extensionLanguage: ExtensionLanguage.ENGLISH,
 					apiKey: inputValue,

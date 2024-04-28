@@ -35,7 +35,7 @@ export function addEventPaginationElement() {
 }
 
 export function addEventContentElement() {
-	const  childContentElement = document.querySelectorAll(ExtensionSelector.paginationTopСhild);
+	const  childContentElement = document.querySelectorAll(ExtensionSelector.paginationTopChilde);
 
 	function disabledAllEl(n: string) {
 		const childContentElements = document.querySelectorAll(`.group-${n}`);

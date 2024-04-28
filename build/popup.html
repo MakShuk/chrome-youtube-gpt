@@ -7,10 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
-  <body  id="extention-body">
-    <div id="extention-page-state">Waiting for page to load</div>
+  <body  id="extension-body">
+    <div id="extension-page-state">Waiting for page to load</div>
             <!--   first key entry -->
-    <div id="extention-add-key" style="display: none;">
+    <div id="extension-add-key" style="display: none;">
       <div class="input-group mb-3">
         <span class="input-group-text" id="first-api-key">API Key</span>
         <input type="text" id="first-add-key" value="" class="form-control text-white" style="background-color: rgb(68, 70, 84);"
@@ -19,14 +19,14 @@
       <button type="button" id="save-key" class="btn button" disabled>Save</button>
     </div>
             <!-- Error messages -->
-    <div id="extention-page-error" style="display: none;" >The extension only works on Youtube.com</div>
-    <div id="extention-page-info" style="display: none;">Waiting for subtitles to load</div>
+    <div id="extension-page-error" style="display: none;" >The extension only works on Youtube.com</div>
+    <div id="extension-page-info" style="display: none;">Waiting for subtitles to load</div>
             <!--   main block -->
     <div class="start_message" style="display: none;">
-      <button id="extention-button">Get subtitles</button>
+      <button id="extension-button">Get subtitles</button>
         <a as="button"
           class=" items-center gap-3 text-white"
-          id="extention-settings-button"  tabindex="-1" data-headlessui-state=""><svg stroke="currentColor"
+          id="extension-settings-button"  tabindex="-1" data-headlessui-state=""><svg stroke="currentColor"
             fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"
             height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="3"></circle>
@@ -36,12 +36,12 @@
           </svg></a>
     </div>
             <!-- settings block -->
-    <div id="extention-settings" style="display: none;">
+    <div id="extension-settings" style="display: none;">
       <div class="header-settings">
         <div>
           <h3 as="h3" id="setting-title">Settings</h2>
         </div>
-        <button id="extention-settings-close"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+        <button id="extension-settings-close"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
             stroke-linejoin="round" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -49,7 +49,7 @@
       </div>
       <div class="settings-block">
          <h4 id="context-title">Context</h4>
-        <textarea id="context-textarea"class="extention-textarea form-control text-white" aria-label="With textarea"></textarea>
+        <textarea id="context-textarea"class="extension-textarea form-control text-white" aria-label="With textarea"></textarea>
       </div>
         <div class="settings-select-block">
           <select id="extensionLanguage" class="form-select form-control text-white" style="background-color: rgb(68, 70, 84);" aria-label="Default select example">

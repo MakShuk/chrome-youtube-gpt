@@ -26,7 +26,7 @@ export class OpenaiService {
 		try {
 			const completion = await this.openai.chat.completions.create({
 				messages: messages,
-				model: 'gpt-3.5-turbo-16k',
+				model: 'gpt-4-0125-preview',
 				temperature: 0.5,
 			});
 			if (!completion.choices[0]?.message) {
