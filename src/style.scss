@@ -1,4 +1,4 @@
-#extention-body {
+#extension-body {
 	height: max-content;
 	width: 800px;
 	background-color: rgb(52, 53, 65);
@@ -11,7 +11,7 @@
 		text-align: center;
 	}
 
-	#extention-add-key {
+	#extension-add-key {
 		display: grid;
 		grid-template-columns: 80% 20%;
 		gap: 10px;
@@ -373,8 +373,8 @@
 		opacity: 0.5;
 	}
 
-	#extention-button,
-	.extention-button {
+	#extension-button,
+	.extension-button {
 		tab-size: 4;
 		color-scheme: dark;
 		border: 0 solid #d9d9e3;
@@ -400,7 +400,7 @@
 		background-color: #238143;
 	}
 
-	#extention-settings {
+	#extension-settings {
 		.header-settings {
 			display: grid;
 			grid-template-columns: 740px 20px;
@@ -540,6 +540,7 @@
 			margin-top: 1px;
 			margin-bottom: 15px;
 			white-space: pre-wrap;
+			background-color: #565869;
 		}
 
 		.button {

@@ -1,12 +1,12 @@
 export const translations = {
 	russian: {
-		'extention-page-state': 'Ожидание загрузки страницы',
-		'extention-page-error': 'Расширение работает только на Youtube.com',
-		'extention-page-info': 'Ожидание загрузки субтитров',
-		'extention-button': 'Получить субтитры',
+		'extension-page-state': 'Ожидание загрузки страницы',
+		'extension-page-error': 'Расширение работает только на Youtube.com',
+		'extension-page-info': 'Ожидание загрузки субтитров',
+		'extension-button': 'Получить субтитры',
 		'setting-title': 'Настройки',
 		'context-title': 'Контекст',
-		'save-settings': 'Сохрнить настройки',
+		'save-settings': 'Сохранить настройки',
 	},
 	english: {
 		'extension-page-state': 'Waiting for page to load',
