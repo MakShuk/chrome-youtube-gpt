@@ -26,7 +26,7 @@ export class OpenaiService {
 		try {
 			const completion = await this.openai.chat.completions.create({
 				messages: messages,
-				model: 'gpt-4o-2024-05-13',
+				model: 'gpt-4o-mini',
 				temperature: 1,
 			});
 			if (!completion.choices[0]?.message) {
@@ -67,7 +67,7 @@ export class OpenaiService {
 	): Promise<Stream<ChatCompletionChunk> | ExtendedChatCompletionMessage> {
 		try {
 			const stream = await this.openai.chat.completions.create({
-				model: 'gpt-3.5-turbo-16k',
+				model: 'gpt-4o-mini',
 				messages: messages,
 				stream: true,
 			});
