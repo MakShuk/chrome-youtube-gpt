@@ -11,7 +11,7 @@ export async function buttonAction() {
 	const body = new PageElementService(ExtensionSelector.body);
 	startMessageEl.hide(true);
 	const sub = await BackgroundScript.run(youTubeSubtitlesParser);
-	const textArray = splitTextIntoChunks(sub.content, 16_300);
+	const textArray = splitTextIntoChunks(sub.content, 127_500);
 
 	const contentElement = createContentElement(textArray);
 	const paginationElement = createPaginationElement(textArray);
