@@ -12,7 +12,6 @@ export async function buttonAction() {
 	startMessageEl.hide(true);
 	const sub = await BackgroundScript.run(youTubeSubtitlesParser);
 	const textArray = splitTextIntoChunks(sub.content, 127_500);
-
 	const contentElement = createContentElement(textArray);
 	const paginationElement = createPaginationElement(textArray);
 
